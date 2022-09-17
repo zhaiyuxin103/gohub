@@ -64,13 +64,13 @@ func getEncoder() zapcore.Encoder {
 
 	// 本地环境配置
 	if app.IsLocal() {
-		// 终端输入的关键词高亮
+		// 终端输出的关键词高亮
 		encoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder
 		// 本地设置内置的 Console 解码器（支持 stacktrace 换行）
 		return zapcore.NewConsoleEncoder(encoderConfig)
 	}
 
-	// 线上环境使用 JSON 解码器
+	// 线上环境使用 JSON 编码器
 	return zapcore.NewJSONEncoder(encoderConfig)
 }
 
