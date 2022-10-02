@@ -103,3 +103,12 @@ func deleteMySQLTables() error {
 	DB.Exec("SET foreign_key_checks = 1;")
 	return nil
 }
+
+func TableName(obj interface{}) string {
+	stmt := &gorm.Statement{DB: DB}
+	err := stmt.Parse(obj)
+	if err != nil {
+		return ""
+	}
+	return stmt.Schema.Table
+}
