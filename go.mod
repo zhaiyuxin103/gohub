@@ -20,6 +20,7 @@ require (
 	go.uber.org/zap v1.23.0
 	golang.org/x/crypto v0.0.0-20220919173607-35f4265a4bc0
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
+	gorm.io/datatypes v1.0.7
 	gorm.io/driver/mysql v1.3.6
 	gorm.io/driver/sqlite v1.3.6
 	gorm.io/gorm v1.23.9
