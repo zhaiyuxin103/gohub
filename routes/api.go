@@ -6,6 +6,8 @@ import (
 	"gohub/app/http/controllers/api/v1/auth"
 	"gohub/app/http/middlewares"
 	"net/http"
+
+	controllers "gohub/app/http/controllers/api/v1"
 )
 
 // RegisterAPIRoutes 注册 API 相关路由
@@ -60,6 +62,11 @@ func RegisterAPIRoutes(r *gin.Engine) {
 			pwc := new(auth.PasswordController)
 			authGroup.POST("/password-reset/using-phone", middlewares.GuestJWT(), pwc.ResetByPhone)
 			authGroup.POST("/password-reset/using-email", middlewares.GuestJWT(), pwc.ResetByEmail)
+
+			uc := new(controllers.UsersController)
+
+			// 获取当前用户
+			v1.GET("/user", middlewares.AuthJWT(), uc.CurrentUser)
 		}
 	}
 }
