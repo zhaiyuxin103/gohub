@@ -106,7 +106,7 @@ func getLogWriter(filename string, maxSize, maxBackup, maxAge int, compress bool
 	}
 }
 
-// Dump 调试专用，不会终端程序，会在终端打印出 warning 消息。
+// Dump 调试专用，不会中断程序，会在终端打印出 warning 消息。
 // 第一个参数会使用 json.Marshal 进行渲染，第二个参数是消息（可选）
 //
 //	logger.Dump(user.User{Name: "test"})
