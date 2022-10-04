@@ -1,0 +1,951 @@
+{
+	"info": {
+		"_postman_id": "027c4591-750c-4eaf-be34-b8dbe6778737",
+		"name": "Gohub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14392631"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Signup",
+					"item": [
+						{
+							"name": "signup/phone/exist",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phone\": \"{{phone}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}/auth/signup/phone/exist",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"signup",
+										"phone",
+										"exist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signup/email/exist",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"{{email}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}/auth/signup/email/exist",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"signup",
+										"email",
+										"exist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signup/using-phone",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"zhaiyuxin\",\n    \"password\":\"password\",\n    \"password_confirm\":\"password\",\n    \"verify_code\": \"{{verify_code_phone}}\",\n    \"phone\": \"00011059149\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}/auth/signup/using-phone",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"signup",
+										"using-phone"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signup/using-email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"zhaiyuxin103\",\n    \"password\":\"password\",\n    \"password_confirm\":\"password\",\n    \"verify_code\": \"123123\",\n    \"email\": \"zhaiyuxin103@testing.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}/auth/signup/using-email",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"signup",
+										"using-email"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Verify Code",
+					"item": [
+						{
+							"name": "verify-codes/captcha",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://{{host}}/auth/verify-codes/captcha",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"verify-codes",
+										"captcha"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify-codes/phone",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phone\":\"18816545428\",\n    \"captcha_id\": \"captcha_skip_test\",\n    \"captcha_answer\": \"{{captcha_answer}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}/auth/verify-codes/phone",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"verify-codes",
+										"phone"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify-codes/email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"zhaiyuxin103@hotmail.com\",\n    \"captcha_id\": \"captcha_skip_test\",\n    \"captcha_answer\": \"{{captcha_answer}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}/auth/verify-codes/email",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"verify-codes",
+										"email"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "login/using-phone",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phone\": \"00011059149\",\n    \"verify_code\": \"{{verify_code_phone}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}/auth/login/using-phone",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"login",
+										"using-phone"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login/using-password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"login_id\": \"zhaiyuxin103@testing.com\",\n    \"password\": \"newpassword123\",\n    \"captcha_id\": \"captcha_skip_test\",\n    \"captcha_answer\": \"648002\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}/auth/login/using-password",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"login",
+										"using-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login/refresh-token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNiIsInVzZXJfbmFtZSI6InpoYWl5dXhpbiIsImV4cGlyZV90aW1lIjoxNjY5MzY1NzE3LCJleHAiOjE2NjkzNjU3MTcsImlhdCI6MTY2NDE4MTcxNywiaXNzIjoiR29odWIiLCJuYmYiOjE2NjQxODE3MTd9.Q2ipHHh9twbQqH8eNf02wVud6iaNnUBerU2hRQK98CA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://{{host}}/auth/login/refresh-token",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"login",
+										"refresh-token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Password Reset",
+					"item": [
+						{
+							"name": "password-reset/using-phone",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"phone\":\"00011059149\",\n    \"verify_code\": \"{{verify_code_phone}}\",\n    \"password\":\"password123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}/auth/password-reset/using-phone",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"password-reset",
+										"using-phone"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "password-reset/using-email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"zhaiyuxin103@testing.com\",\n    \"verify_code\": \"{{verify_code_email}}\",\n    \"password\":\"newpassword123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{host}}/auth/password-reset/using-email",
+									"protocol": "http",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"auth",
+										"password-reset",
+										"using-email"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "user 获取当前用户",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InpoYWl5dXhpbiIsImV4cGlyZV90aW1lIjoxNjY5ODc1OTk5LCJleHAiOjE2Njk4NzU5OTksImlhdCI6MTY2NDY5MTk5OSwiaXNzIjoiR29odWIiLCJuYmYiOjE2NjQ2OTE5OTl9.cf28GhnMAntPiy33ECeiX6Vm8h6PCvtKVVISjiJi_Zc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}/user",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}/users",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InpoYWl5dXhpbiIsImV4cGlyZV90aW1lIjoxNjcwMDMyMjYxLCJleHAiOjE2NzAwMzIyNjEsImlhdCI6MTY2NDg0ODI2MSwiaXNzIjoiR29odWIiLCJuYmYiOjE2NjQ4NDgyNjF9.xGdYiXSL74Ze_3qhzSpmQCDDCzrew9v6TRvfpNvmyqo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"aufree\",\n    \"introduction\": \"这里是个人描述\",\n    \"city\": \"深圳\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/users",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InpoYWl5dXhpbiIsImV4cGlyZV90aW1lIjoxNjcwMDMyMjYxLCJleHAiOjE2NzAwMzIyNjEsImlhdCI6MTY2NDg0ODI2MSwiaXNzIjoiR29odWIiLCJuYmYiOjE2NjQ4NDgyNjF9.xGdYiXSL74Ze_3qhzSpmQCDDCzrew9v6TRvfpNvmyqo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"summer@testing.com\",\n    \"verify_code\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/users/email",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"email"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/phone",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InpoYWl5dXhpbiIsImV4cGlyZV90aW1lIjoxNjcwMDMyMjYxLCJleHAiOjE2NzAwMzIyNjEsImlhdCI6MTY2NDg0ODI2MSwiaXNzIjoiR29odWIiLCJuYmYiOjE2NjQ4NDgyNjF9.xGdYiXSL74Ze_3qhzSpmQCDDCzrew9v6TRvfpNvmyqo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\":\"00012312312\",\n    \"verify_code\": \"123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/users/phone",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"phone"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InpoYWl5dXhpbiIsImV4cGlyZV90aW1lIjoxNjcwMDMyMjYxLCJleHAiOjE2NzAwMzIyNjEsImlhdCI6MTY2NDg0ODI2MSwiaXNzIjoiR29odWIiLCJuYmYiOjE2NjQ4NDgyNjF9.xGdYiXSL74Ze_3qhzSpmQCDDCzrew9v6TRvfpNvmyqo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"password\",\n    \"new_password\": \"newpassword\",\n    \"new_password_confirm\": \"newpassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/users/password",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/avatar",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InpoYWl5dXhpbiIsImV4cGlyZV90aW1lIjoxNjcwMDMyMjYxLCJleHAiOjE2NzAwMzIyNjEsImlhdCI6MTY2NDg0ODI2MSwiaXNzIjoiR29odWIiLCJuYmYiOjE2NjQ4NDgyNjF9.xGdYiXSL74Ze_3qhzSpmQCDDCzrew9v6TRvfpNvmyqo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/Users/zhaiyuxin/Pictures/p51.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://{{host}}/users/avatar",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InpoYWl5dXhpbiIsImV4cGlyZV90aW1lIjoxNjY5OTA3MjQwLCJleHAiOjE2Njk5MDcyNDAsImlhdCI6MTY2NDcyMzI0MCwiaXNzIjoiR29odWIiLCJuYmYiOjE2NjQ3MjMyNDB9.MoZb2S9-GH-Sn5dwDTBqMYDI7XNxPiJdeD5wkC-cETo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"新分类\",\n    \"description\": \"这里是描述\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/categories",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InpoYWl5dXhpbiIsImV4cGlyZV90aW1lIjoxNjY5OTA3MjQwLCJleHAiOjE2Njk5MDcyNDAsImlhdCI6MTY2NDcyMzI0MCwiaXNzIjoiR29odWIiLCJuYmYiOjE2NjQ3MjMyNDB9.MoZb2S9-GH-Sn5dwDTBqMYDI7XNxPiJdeD5wkC-cETo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"新分类名称\",\n    \"description\": \"这里是描述\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/categories/:id",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"categories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}/categories",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InpoYWl5dXhpbiIsImV4cGlyZV90aW1lIjoxNjY5OTA3MjQwLCJleHAiOjE2Njk5MDcyNDAsImlhdCI6MTY2NDcyMzI0MCwiaXNzIjoiR29odWIiLCJuYmYiOjE2NjQ3MjMyNDB9.MoZb2S9-GH-Sn5dwDTBqMYDI7XNxPiJdeD5wkC-cETo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}/categories/:id",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"categories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Topic",
+			"item": [
+				{
+					"name": "topics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InpoYWl5dXhpbiIsImV4cGlyZV90aW1lIjoxNjY5OTY4ODg1LCJleHAiOjE2Njk5Njg4ODUsImlhdCI6MTY2NDc4NDg4NSwiaXNzIjoiR29odWIiLCJuYmYiOjE2NjQ3ODQ4ODV9.3p4lpZNx4euOYKS3zsOwCIHIEAgv2Th597SVGxPrKcc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"我发的帖子\",\n    \"body\": \"这里是帖子描述这里是帖子描述\",\n    \"category_id\": \"2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/topics",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"topics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "topics/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InpoYWl5dXhpbiIsImV4cGlyZV90aW1lIjoxNjY5OTY4ODg1LCJleHAiOjE2Njk5Njg4ODUsImlhdCI6MTY2NDc4NDg4NSwiaXNzIjoiR29odWIiLCJuYmYiOjE2NjQ3ODQ4ODV9.3p4lpZNx4euOYKS3zsOwCIHIEAgv2Th597SVGxPrKcc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"修改后的帖子标题\",\n    \"body\": \"这里是帖子描述这里是帖子描述\",\n    \"category_id\": \"3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{host}}/topics/:id",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"topics",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "topics/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSIsInVzZXJfbmFtZSI6InpoYWl5dXhpbiIsImV4cGlyZV90aW1lIjoxNjY5OTY4ODg1LCJleHAiOjE2Njk5Njg4ODUsImlhdCI6MTY2NDc4NDg4NSwiaXNzIjoiR29odWIiLCJuYmYiOjE2NjQ3ODQ4ODV9.3p4lpZNx4euOYKS3zsOwCIHIEAgv2Th597SVGxPrKcc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}/topics/:id",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"topics",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "topics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}/topics",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"topics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "topics/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}/topics/:id",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"topics",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Link",
+			"item": [
+				{
+					"name": "links",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{host}}/links",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"links"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
