@@ -2,6 +2,7 @@ package migrations
 
 import (
 	"database/sql"
+    "gohub/pkg/logger"
 	"gohub/app/models"
 	"gohub/pkg/migrate"
 	"gorm.io/datatypes"
@@ -32,16 +33,12 @@ func init() {
 
     up := func(migrator gorm.Migrator, DB *sql.DB) {
         err := migrator.AutoMigrate(&User{})
-        if err != nil {
-            return
-        }
+        logger.LogIf(err)
     }
 
     down := func(migrator gorm.Migrator, DB *sql.DB) {
         err := migrator.DropTable(&User{})
-        if err != nil {
-            return
-        }
+        logger.LogIf(err)
     }
 
     migrate.Add("{{FileName}}", up, down)
