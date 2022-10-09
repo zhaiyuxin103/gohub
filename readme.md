@@ -25,7 +25,7 @@
 ## Install
 
 ```sh
-go get
+go mod tidy
 ```
 
 ## Usage
